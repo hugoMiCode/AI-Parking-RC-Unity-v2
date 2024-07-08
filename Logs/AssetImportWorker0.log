@@ -1101,3 +1101,462 @@ Received Import Request.
 Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b43d990fd0f9f54091fed8c9364770c0') in 0,038954 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 538
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0,601 seconds
+Refreshing native plugins compatible for Editor in 2,69 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1,069 seconds
+Domain Reload Profiling: 1668ms
+	BeginReloadAssembly (176ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (57ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (317ms)
+		LoadAssemblies (375ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1070ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (528ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (386ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3,43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 2085 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 57 unused Assets / (22,7 MB). Loaded Objects now: 2619.
+Memory consumption went from 122,9 MB to 100,2 MB.
+Total: 15,325770 ms (FindLiveObjects: 0,467769 ms CreateObjectMapping: 0,159931 ms MarkObjects: 5,056822 ms  DeleteObjects: 9,638993 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 232f87dd983dbecb2a4e21e08eb2cef8 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0,555 seconds
+Refreshing native plugins compatible for Editor in 2,38 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0,903 seconds
+Domain Reload Profiling: 1456ms
+	BeginReloadAssembly (186ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (53ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (262ms)
+		LoadAssemblies (336ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (904ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (531ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (400ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 4,27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 2086 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 57 unused Assets / (22,7 MB). Loaded Objects now: 2623.
+Memory consumption went from 123,2 MB to 100,4 MB.
+Total: 12,245902 ms (FindLiveObjects: 0,298681 ms CreateObjectMapping: 0,079599 ms MarkObjects: 5,481290 ms  DeleteObjects: 6,384487 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 232f87dd983dbecb2a4e21e08eb2cef8 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 536,323773 seconds.
+  path: Assets/Prefabs/EnvParRC.prefab
+  artifactKey: Guid(300810300cbce1160ac56b291a12d5f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EnvParRC.prefab using Guid(300810300cbce1160ac56b291a12d5f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88f4819ff884800cfb92aea92ce51ef7') in 0,145722 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 419
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0,569 seconds
+Refreshing native plugins compatible for Editor in 2,37 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0,805 seconds
+Domain Reload Profiling: 1373ms
+	BeginReloadAssembly (181ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (67ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (269ms)
+		LoadAssemblies (329ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (806ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (470ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (349ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 3,55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 2085 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 57 unused Assets / (22,7 MB). Loaded Objects now: 2627.
+Memory consumption went from 122,9 MB to 100,2 MB.
+Total: 12,162665 ms (FindLiveObjects: 0,326373 ms CreateObjectMapping: 0,106019 ms MarkObjects: 4,998864 ms  DeleteObjects: 6,729436 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 232f87dd983dbecb2a4e21e08eb2cef8 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 145,651411 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '089abe6b4c754c16db91e89f3b920898') in 0,156812 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 622
+========================================================================
+Received Import Request.
+  Time since last request: 44,360269 seconds.
+  path: Assets/Prefabs/CarFixed.prefab
+  artifactKey: Guid(706e1b1a3506e322285d8d4dca5675a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CarFixed.prefab using Guid(706e1b1a3506e322285d8d4dca5675a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c63b9cf3eee673ec7151bcd367439b2a') in 0,016639 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 73
+========================================================================
+Received Import Request.
+  Time since last request: 1,697428 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b11da2289cf268237c831648fcff5cc') in 0,029098 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 622
+========================================================================
+Received Import Request.
+  Time since last request: 7,774213 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3de26b6203233b771e91c4f5a4f2b51') in 0,030915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 24,555063 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '848b0bede0017b247b6aac6d2d160271') in 0,030977 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 7,737133 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e7cd34c7cd28d853bb34df8b76f9a26') in 0,028549 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 4,842829 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b8a9f4a7dc6f7553e6dd3cc7b1ed35c') in 0,028872 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 622
+========================================================================
+Received Import Request.
+  Time since last request: 2,601568 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21536241c0161a8d1b13fd741a973d94') in 0,029852 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 6,970763 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c3de3a1246a53b94315becea0997125') in 0,044035 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 6,606187 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '520f5247be00a487cbae6e0d99ad395c') in 0,048946 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 11,343385 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2674ffbc2cb60576d93bbc885a61eb82') in 0,033603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 5,621686 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f9e94e2ae360e6311a996ad20d6cd46') in 0,029666 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 664
+========================================================================
+Received Import Request.
+  Time since last request: 1,365080 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7db9db982573e040371090d51fafefb') in 0,030558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 706
+========================================================================
+Received Import Request.
+  Time since last request: 7,297236 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f3ce24aa7df8e39d0a80ae0e7a15bf5') in 0,031652 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 706
+========================================================================
+Received Import Request.
+  Time since last request: 13,034490 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1959f755ed680d52658e418d4b3e7f7a') in 0,028880 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 706
+========================================================================
+Received Import Request.
+  Time since last request: 1,532422 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b50ceb33b42bdb2a8e691b5e53321a8') in 0,031920 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 748
+========================================================================
+Received Import Request.
+  Time since last request: 5,136054 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47404c37cbc5e84afdcb3f070a1615d6') in 0,032197 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 748
+========================================================================
+Received Import Request.
+  Time since last request: 0,332639 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aa8c94a6ac195d6df5dd1d052956b5f') in 0,050145 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 790
+========================================================================
+Received Import Request.
+  Time since last request: 6,336854 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c2d8f0bd493abe11194472263e17eb4') in 0,032859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 790
+========================================================================
+Received Import Request.
+  Time since last request: 0,766295 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5638c1c06218f85adb36c8de12bc1c1d') in 0,032337 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 748
+========================================================================
+Received Import Request.
+  Time since last request: 1,186426 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c97beece2edb218dfdb45ac22b6a8ca7') in 0,037171 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 706
+========================================================================
+Received Import Request.
+  Time since last request: 8,777562 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c29464233b1e71af0f8399b0d70fa800') in 0,024720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 412
+========================================================================
+Received Import Request.
+  Time since last request: 5,337205 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92c95f2b4d443fe2eab16c95a5ad67d9') in 0,030485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 454
+========================================================================
+Received Import Request.
+  Time since last request: 7,915266 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67fde2c813ac1da80ce0c79b5c785962') in 0,027484 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 454
+========================================================================
+Received Import Request.
+  Time since last request: 0,181303 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8def0932e47be4de8ede63ec733b0ba4') in 0,027449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 496
+========================================================================
+Received Import Request.
+  Time since last request: 4,645911 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7982bca8e9ad3022066134a2d95893f') in 0,026632 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 496
+========================================================================
+Received Import Request.
+  Time since last request: 0,392033 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a17ad39d310c73eac02e50ec955fb59') in 0,027161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 538
+========================================================================
+Received Import Request.
+  Time since last request: 4,666343 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b7042b2ea79dd0f1aa56633ec9843a8') in 0,044595 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 538
+========================================================================
+Received Import Request.
+  Time since last request: 27,758887 seconds.
+  path: Assets/Prefabs/CarAgent.prefab
+  artifactKey: Guid(9e7c5a6ee4f92384baf355df493c1f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CarAgent.prefab using Guid(9e7c5a6ee4f92384baf355df493c1f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3aabcef75b914a11a28bc7e717a15b8') in 0,012761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 81
+========================================================================
+Received Import Request.
+  Time since last request: 0,220449 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77213241edf92322e52de9765b0278e8') in 0,028994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 589
+========================================================================
+Received Import Request.
+  Time since last request: 9,972406 seconds.
+  path: Assets/Prefabs/Env90RC.prefab
+  artifactKey: Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Env90RC.prefab using Guid(cd21f03e90f506a4da9a98f1e4df287a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '964a50418420636ebe5fc10a80501af0') in 0,049546 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 589
+========================================================================
+Received Import Request.
+  Time since last request: 4,990555 seconds.
+  path: Assets/Prefabs/CarAgent90.prefab
+  artifactKey: Guid(9e7c5a6ee4f92384baf355df493c1f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CarAgent90.prefab using Guid(9e7c5a6ee4f92384baf355df493c1f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a5672044ea0fcb0f8d6892d5039f18') in 0,019400 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 81

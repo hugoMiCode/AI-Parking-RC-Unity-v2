@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 5466047872267211603}
   - component: {fileID: 4652391282364385774}
   m_Layer: 0
-  m_Name: car
+  m_Name: CarFixed
   m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
