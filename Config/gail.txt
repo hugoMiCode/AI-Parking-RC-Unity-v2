@@ -1,0 +1,9 @@
+      gail:
+        strength: 0.3
+        demo_path: Demos/DemoRC.demo
+        use_actions: true
+
+    behavioral_cloning: 
+      demo_path: Demos/DemoRC.demo
+      steps: 750000
+      strength: 0.3
