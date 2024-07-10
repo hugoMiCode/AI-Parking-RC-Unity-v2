@@ -1,0 +1,155 @@
+{
+    "Park90RC": {
+        "checkpoints": [
+            {
+                "steps": 2029551,
+                "file_path": "results/90RC2/Park90RC/Park90RC-2029551.onnx",
+                "reward": -766.1795825138688,
+                "creation_time": 1720529405.134597,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-2029551.pt"
+                ]
+            },
+            {
+                "steps": 2060394,
+                "file_path": "results/90RC2/Park90RC/Park90RC-2060394.onnx",
+                "reward": -477.1905669010047,
+                "creation_time": 1720529581.4485345,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-2060394.pt"
+                ]
+            },
+            {
+                "steps": 2358694,
+                "file_path": "results/90RC2/Park90RC/Park90RC-2358694.onnx",
+                "reward": null,
+                "creation_time": 1720531066.348386,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-2358694.pt"
+                ]
+            },
+            {
+                "steps": 2499895,
+                "file_path": "results/90RC2/Park90RC/Park90RC-2499895.onnx",
+                "reward": -268.1352393410423,
+                "creation_time": 1720539670.3500998,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-2499895.pt"
+                ]
+            },
+            {
+                "steps": 2999990,
+                "file_path": "results/90RC2/Park90RC/Park90RC-2999990.onnx",
+                "reward": -391.67397054036456,
+                "creation_time": 1720540854.6513805,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-2999990.pt"
+                ]
+            },
+            {
+                "steps": 3499856,
+                "file_path": "results/90RC2/Park90RC/Park90RC-3499856.onnx",
+                "reward": -132.82560560438367,
+                "creation_time": 1720543327.4169273,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-3499856.pt"
+                ]
+            },
+            {
+                "steps": 3999877,
+                "file_path": "results/90RC2/Park90RC/Park90RC-3999877.onnx",
+                "reward": 0.0,
+                "creation_time": 1720545869.5652804,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-3999877.pt"
+                ]
+            },
+            {
+                "steps": 4499943,
+                "file_path": "results/90RC2/Park90RC/Park90RC-4499943.onnx",
+                "reward": -924.4184377034505,
+                "creation_time": 1720548387.2012768,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-4499943.pt"
+                ]
+            },
+            {
+                "steps": 4999961,
+                "file_path": "results/90RC2/Park90RC/Park90RC-4999961.onnx",
+                "reward": -98.44356963851236,
+                "creation_time": 1720550674.5300908,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-4999961.pt"
+                ]
+            },
+            {
+                "steps": 5272812,
+                "file_path": "results/90RC2/Park90RC/Park90RC-5272812.onnx",
+                "reward": null,
+                "creation_time": 1720551324.9597855,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-5272812.pt"
+                ]
+            },
+            {
+                "steps": 5499866,
+                "file_path": "results/90RC2/Park90RC/Park90RC-5499866.onnx",
+                "reward": -402.5398419698079,
+                "creation_time": 1720552068.833518,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-5499866.pt"
+                ]
+            },
+            {
+                "steps": 5999790,
+                "file_path": "results/90RC2/Park90RC/Park90RC-5999790.onnx",
+                "reward": -459.1602783203125,
+                "creation_time": 1720554607.2494044,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-5999790.pt"
+                ]
+            },
+            {
+                "steps": 6499832,
+                "file_path": "results/90RC2/Park90RC/Park90RC-6499832.onnx",
+                "reward": -389.6656799316406,
+                "creation_time": 1720557127.4077497,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-6499832.pt"
+                ]
+            },
+            {
+                "steps": 6999826,
+                "file_path": "results/90RC2/Park90RC/Park90RC-6999826.onnx",
+                "reward": -835.3947631835938,
+                "creation_time": 1720559664.0297668,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-6999826.pt"
+                ]
+            },
+            {
+                "steps": 7484579,
+                "file_path": "results/90RC2/Park90RC/Park90RC-7484579.onnx",
+                "reward": null,
+                "creation_time": 1720562000.2556133,
+                "auxillary_file_paths": [
+                    "results/90RC2/Park90RC/Park90RC-7484579.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 7484579,
+            "file_path": "results/90RC2/Park90RC.onnx",
+            "reward": null,
+            "creation_time": 1720562000.2556133,
+            "auxillary_file_paths": [
+                "results/90RC2/Park90RC/Park90RC-7484579.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cu121"
+    }
+}

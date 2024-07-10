@@ -181,7 +181,7 @@ namespace UnityStandardAssets.Vehicles.Car
             float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
             float spawnZ = UnityEngine.Random.Range(spawnRangeZ.x, spawnRangeZ.y);
             Vector3 spawnPosition = new(spawnX, startPosition.y, spawnZ);
-            Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(75f, 105f), 0);
+            Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(-80f, 80f), 0);
 
             rb.transform.SetLocalPositionAndRotation(spawnPosition, spawnRotation);
         }
@@ -363,7 +363,7 @@ namespace UnityStandardAssets.Vehicles.Car
             // a suprimer et a remplacer par une condition sur le lidar
             if (collision.gameObject.CompareTag("Car"))
             {
-                AddReward(-500f);
+                AddReward(-200f);
                 EndEpisodeWithSuccess(false);
                 Debug.Log("Collision with car");
             }

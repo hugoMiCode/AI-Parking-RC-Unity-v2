@@ -268,7 +268,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 600
-  spawnRangeX: {x: -2, y: 2}
+  spawnRangeX: {x: -5.5, y: 5.5}
   spawnRangeZ: {x: -7, y: -10}
   targetFinal: {fileID: 0}
 --- !u!114 &2466525434748292097
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Record: 1
   NumStepsToRecord: 0
-  DemonstrationName: Park90RCDemo
+  DemonstrationName: 90RCDemo
   DemonstrationDirectory: Demos
 --- !u!1 &4877804631769019310
 GameObject:
