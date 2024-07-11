@@ -236,8 +236,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
                 // if (Mathf.Abs(reward) > 0.08f)
                 //     Debug.Log("Reward distance: " + reward);
-                // else
-                //     Debug.Log("Reward distance: 0");
             }
 
 
@@ -254,7 +252,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
             float spawnZ = UnityEngine.Random.Range(spawnRangeZ.x, spawnRangeZ.y);
-            slotMultiplier = UnityEngine.Random.Range(2f, 2f); // 1 is the car length, 2 is 2 car lengths, etc.
+            slotMultiplier = UnityEngine.Random.Range(1.7f, 2f); // 1 is the car length, 2 is 2 car lengths, etc.
 
             Vector3 spawnPosition = new(spawnX, startPosition.y, spawnZ);
             Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(-5f, 5f), 0);
@@ -283,22 +281,20 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public override void CollectObservations(VectorSensor sensor)
         {
-            // float[] RayDistancesLeftCurrent;
-            // float[] RayDistancesRightCurrent;
-            // float RayDistanceFrontCurrent;
-            // float RayDistanceBackCurrent;
+            float[] RayDistancesLeftCurrent;
+            float[] RayDistancesRightCurrent;
+            float RayDistanceFrontCurrent;
+            float RayDistanceBackCurrent;
 
-            // (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
+            (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
 
-            // // Add the lidar data to the observation
-            // sensor.AddObservation(RayDistanceFrontCurrent);
-            // for (int i = 0; i < RayDistancesRightCurrent.Length; i++)
-            //     sensor.AddObservation(RayDistancesRightCurrent[i]);
-            // sensor.AddObservation(RayDistanceBackCurrent);
-            // for (int i = 0; i < RayDistancesLeftCurrent.Length; i++)
-            //     sensor.AddObservation(RayDistancesLeftCurrent[i]);
-
-            sensor.AddObservation(carControllerRC.CurrentSpeed);
+            // Add the lidar data to the observation
+            sensor.AddObservation(RayDistanceFrontCurrent);
+            for (int i = 0; i < RayDistancesRightCurrent.Length; i++)
+                sensor.AddObservation(RayDistancesRightCurrent[i]);
+            sensor.AddObservation(RayDistanceBackCurrent);
+            for (int i = 0; i < RayDistancesLeftCurrent.Length; i++)
+                sensor.AddObservation(RayDistancesLeftCurrent[i]);
         }
 
         public override void OnActionReceived(ActionBuffers actions)
