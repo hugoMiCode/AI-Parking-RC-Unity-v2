@@ -28,6 +28,8 @@ namespace UnityStandardAssets.Vehicles.Car
         public GameObject carBlackBack;
 
         private int RayAmount;
+        float[] LidarM1;
+        float[] LidarM2;
 
 
 
@@ -70,6 +72,9 @@ namespace UnityStandardAssets.Vehicles.Car
     
             // Length -1 because 2 Rays overlap in the end of the array.
             RayAmount = RayOutputs.Length - 1;
+
+            LidarM1 = new float[RayAmount];
+            LidarM2 = new float[RayAmount];
 
             Reset();
         }
@@ -179,13 +184,13 @@ namespace UnityStandardAssets.Vehicles.Car
                     float multiplier = 1f - distanceToTargetX;
                     // reward += -2000 + 10000f * multiplier * multiplier;
 
-                    if (multiplier < 0.5f)
+                    if (multiplier < 0.6f)
                     {
                         reward += 10000f * multiplier;
                     }
                     else
                     {
-                        reward += 5000f;
+                        reward += 6000f;
                     }
 
                     AddReward(reward);
@@ -252,7 +257,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
             float spawnZ = UnityEngine.Random.Range(spawnRangeZ.x, spawnRangeZ.y);
-            slotMultiplier = UnityEngine.Random.Range(1.7f, 2f); // 1 is the car length, 2 is 2 car lengths, etc.
+            slotMultiplier = UnityEngine.Random.Range(1.8f, 2f); // 1 is the car length, 2 is 2 car lengths, etc.
 
             Vector3 spawnPosition = new(spawnX, startPosition.y, spawnZ);
             Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(-5f, 5f), 0);
@@ -288,13 +293,31 @@ namespace UnityStandardAssets.Vehicles.Car
 
             (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
 
-            // Add the lidar data to the observation
-            sensor.AddObservation(RayDistanceFrontCurrent);
+            int totalRayCount = RayDistancesLeftCurrent.Length + RayDistancesRightCurrent.Length + 2;
+            float[] CurrentLidar = new float[totalRayCount];
+
+            int index = 0;
+
+            CurrentLidar[index++] = RayDistanceFrontCurrent;
             for (int i = 0; i < RayDistancesRightCurrent.Length; i++)
-                sensor.AddObservation(RayDistancesRightCurrent[i]);
-            sensor.AddObservation(RayDistanceBackCurrent);
+                CurrentLidar[index++] = RayDistancesRightCurrent[i];
+            CurrentLidar[index++] = RayDistanceBackCurrent;
             for (int i = 0; i < RayDistancesLeftCurrent.Length; i++)
-                sensor.AddObservation(RayDistancesLeftCurrent[i]);
+                CurrentLidar[index++] = RayDistancesLeftCurrent[i];
+
+
+
+
+            for (int i = 0; i < CurrentLidar.Length; i++) {
+                sensor.AddObservation(CurrentLidar[i]);
+                sensor.AddObservation(LidarM1[i]);
+                sensor.AddObservation(LidarM2[i]);
+            }
+
+            LidarM2 = LidarM1;
+            LidarM1 = CurrentLidar;
+
+            sensor.AddObservation(carControllerRC.CurrentSpeed / carControllerRC.MaxSpeed);
         }
 
         public override void OnActionReceived(ActionBuffers actions)

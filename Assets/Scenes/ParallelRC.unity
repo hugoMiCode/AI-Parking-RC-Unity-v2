@@ -744,8 +744,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4483425922478998510, guid: 300810300cbce1160ac56b291a12d5f4, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 616cd99a1c8812b69a9cc7738f49f5e2, type: 3}
+    - target: {fileID: 4483425922478998510, guid: 300810300cbce1160ac56b291a12d5f4, type: 3}
       propertyPath: m_BehaviorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483425922478998510, guid: 300810300cbce1160ac56b291a12d5f4, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 271
       objectReference: {fileID: 0}
     - target: {fileID: 5902550950669269502, guid: 300810300cbce1160ac56b291a12d5f4, type: 3}
       propertyPath: m_LocalPosition.x

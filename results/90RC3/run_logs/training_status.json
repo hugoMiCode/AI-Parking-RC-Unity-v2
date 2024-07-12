@@ -1,0 +1,155 @@
+{
+    "Park90RC": {
+        "checkpoints": [
+            {
+                "steps": 3999966,
+                "file_path": "results/90RC3/Park90RC/Park90RC-3999966.onnx",
+                "reward": -1226.1947743342473,
+                "creation_time": 1720742782.0380185,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-3999966.pt"
+                ]
+            },
+            {
+                "steps": 4499969,
+                "file_path": "results/90RC3/Park90RC/Park90RC-4499969.onnx",
+                "reward": -457.8684997558594,
+                "creation_time": 1720745286.0027454,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-4499969.pt"
+                ]
+            },
+            {
+                "steps": 4999927,
+                "file_path": "results/90RC3/Park90RC/Park90RC-4999927.onnx",
+                "reward": -757.0428466796875,
+                "creation_time": 1720747788.3150353,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-4999927.pt"
+                ]
+            },
+            {
+                "steps": 5499957,
+                "file_path": "results/90RC3/Park90RC/Park90RC-5499957.onnx",
+                "reward": -516.5470559256418,
+                "creation_time": 1720750288.742877,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-5499957.pt"
+                ]
+            },
+            {
+                "steps": 5999805,
+                "file_path": "results/90RC3/Park90RC/Park90RC-5999805.onnx",
+                "reward": -153.2320600237165,
+                "creation_time": 1720752795.0314286,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-5999805.pt"
+                ]
+            },
+            {
+                "steps": 6499893,
+                "file_path": "results/90RC3/Park90RC/Park90RC-6499893.onnx",
+                "reward": -980.1123341878255,
+                "creation_time": 1720755296.386049,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-6499893.pt"
+                ]
+            },
+            {
+                "steps": 6999902,
+                "file_path": "results/90RC3/Park90RC/Park90RC-6999902.onnx",
+                "reward": -330.6335482788086,
+                "creation_time": 1720757801.5669599,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-6999902.pt"
+                ]
+            },
+            {
+                "steps": 7499814,
+                "file_path": "results/90RC3/Park90RC/Park90RC-7499814.onnx",
+                "reward": -447.0213318237892,
+                "creation_time": 1720760302.8735094,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-7499814.pt"
+                ]
+            },
+            {
+                "steps": 7999953,
+                "file_path": "results/90RC3/Park90RC/Park90RC-7999953.onnx",
+                "reward": -1894.7484283447266,
+                "creation_time": 1720762812.0064263,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-7999953.pt"
+                ]
+            },
+            {
+                "steps": 8499825,
+                "file_path": "results/90RC3/Park90RC/Park90RC-8499825.onnx",
+                "reward": -372.8232723684872,
+                "creation_time": 1720765310.5153236,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-8499825.pt"
+                ]
+            },
+            {
+                "steps": 8999956,
+                "file_path": "results/90RC3/Park90RC/Park90RC-8999956.onnx",
+                "reward": -693.2938188825335,
+                "creation_time": 1720767817.2299218,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-8999956.pt"
+                ]
+            },
+            {
+                "steps": 9499893,
+                "file_path": "results/90RC3/Park90RC/Park90RC-9499893.onnx",
+                "reward": -639.5209674835205,
+                "creation_time": 1720770315.934275,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-9499893.pt"
+                ]
+            },
+            {
+                "steps": 9999833,
+                "file_path": "results/90RC3/Park90RC/Park90RC-9999833.onnx",
+                "reward": null,
+                "creation_time": 1720772825.7003162,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-9999833.pt"
+                ]
+            },
+            {
+                "steps": 10499868,
+                "file_path": "results/90RC3/Park90RC/Park90RC-10499868.onnx",
+                "reward": -133.42487869262695,
+                "creation_time": 1720775323.69803,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-10499868.pt"
+                ]
+            },
+            {
+                "steps": 10519992,
+                "file_path": "results/90RC3/Park90RC/Park90RC-10519992.onnx",
+                "reward": -858.3983023507254,
+                "creation_time": 1720775415.9101393,
+                "auxillary_file_paths": [
+                    "results/90RC3/Park90RC/Park90RC-10519992.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10519992,
+            "file_path": "results/90RC3/Park90RC.onnx",
+            "reward": -858.3983023507254,
+            "creation_time": 1720775415.9101393,
+            "auxillary_file_paths": [
+                "results/90RC3/Park90RC/Park90RC-10519992.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cu121"
+    }
+}

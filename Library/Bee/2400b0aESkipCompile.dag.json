@@ -1,0 +1,305 @@
+{
+  "Nodes": [
+    {
+      "Annotation": "all_tundra_nodes",
+      "DisplayName": null,
+      "Inputs": [],
+      "Outputs": [],
+      "ToBuildDependencies": [
+        1,
+        2,
+        3
+      ],
+      "OverwriteOutputs": false,
+      "DebugActionIndex": 0
+    },
+    {
+      "Annotation": "ScriptAssemblies",
+      "DisplayName": null,
+      "Inputs": [],
+      "Outputs": [],
+      "OverwriteOutputs": false,
+      "DebugActionIndex": 1
+    },
+    {
+      "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
+      "DisplayName": "BuildPlayerDataGenerator TypeDb-All",
+      "Action": "\"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/netcorerun/netcorerun\" \"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.AI.Navigation.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Barracuda.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Burst.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Mathematics.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.ML-Agents.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.barracuda@3.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.Unsafe.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer/Grpc.Core.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer/System.Interactive.Async.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/System.IO.Abstractions.dll\" -a=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/System.IO.Abstractions.TestingHelpers.dll\" -s=\"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Managed/UnityEngine\" -s=\"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/NetStandard/ref/2.1.0\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/ScriptAssemblies\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.barracuda@3.0.0/Barracuda/Runtime/Plugins/ProtoBuffer\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins\" -s=\"/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Inputs": [
+        "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/netcorerun/netcorerun",
+        "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
+        "Library/ScriptAssemblies/Assembly-CSharp.dll",
+        "Library/ScriptAssemblies/Unity.AI.Navigation.dll",
+        "Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll",
+        "Library/ScriptAssemblies/Unity.Barracuda.dll",
+        "Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll",
+        "Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll",
+        "Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll",
+        "Library/ScriptAssemblies/Unity.Burst.dll",
+        "Library/ScriptAssemblies/Unity.Mathematics.dll",
+        "Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll",
+        "Library/ScriptAssemblies/Unity.ML-Agents.dll",
+        "Library/ScriptAssemblies/Unity.TextMeshPro.dll",
+        "Library/ScriptAssemblies/Unity.Timeline.dll",
+        "Library/ScriptAssemblies/UnityEngine.TestRunner.dll",
+        "Library/ScriptAssemblies/UnityEngine.UI.dll",
+        "Library/PackageCache/com.unity.barracuda@3.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll",
+        "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll",
+        "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll",
+        "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll",
+        "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll",
+        "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.Unsafe.dll",
+        "Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll",
+        "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer/Grpc.Core.dll",
+        "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer/System.Interactive.Async.dll",
+        "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/System.IO.Abstractions.dll",
+        "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/System.IO.Abstractions.TestingHelpers.dll"
+      ],
+      "Outputs": [
+        "Library/BuildPlayerData/Editor/TypeDb-All.json"
+      ],
+      "AllowUnexpectedOutput": true,
+      "Env": [],
+      "DebugActionIndex": 2
+    },
+    {
+      "Annotation": "ScriptAssembliesAndTypeDB",
+      "DisplayName": null,
+      "Inputs": [],
+      "Outputs": [],
+      "ToBuildDependencies": [
+        1,
+        2
+      ],
+      "OverwriteOutputs": false,
+      "DebugActionIndex": 3
+    }
+  ],
+  "FileSignatures": [
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.BuildTools.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.CSharpSupport.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Core.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.DotNet.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.NativeProgramSupport.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Stevedore.Program.exe"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.TinyProfiler2.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.GNU.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.LLVM.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.VisualStudio.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.Xcode.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.Tools.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.TundraBackend.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Bee.VisualStudioSolution.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/BeeBuildProgramCommon.Data.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/BeeBuildProgramCommon.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Newtonsoft.Json.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/NiceIO.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/PlayerBuildProgramLibrary.Data.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/PlayerBuildProgramLibrary.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/ScriptCompilationBuildProgram.Data.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/SharpYaml.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Api.Attributes.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Mdb.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Pdb.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Rocks.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Api.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Bee.BuildLogic.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Bee.IL2CPPExeCompileCppBuildProgram.Data.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Linker.Api.dll"
+    },
+    {
+      "File": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline/Unity.Options.dll"
+    },
+    {
+      "File": "Library/Bee/2400b0aESkipCompile-inputdata.json"
+    }
+  ],
+  "StatSignatures": [
+    {
+      "File": "Assets/csc.rsp"
+    },
+    {
+      "File": "Assets/mcs.rsp"
+    },
+    {
+      "File": "Library/Bee/2400b0aESkipCompile-inputdata.json"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.barracuda@3.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.burst@1.8.13/Unity.Burst.Unsafe.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer/Grpc.Core.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/ProtoBuffer/System.Interactive.Async.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/System.IO.Abstractions.TestingHelpers.dll"
+    },
+    {
+      "File": "Library/PackageCache/com.unity.ml-agents@2.0.1/Plugins/System.IO.Abstractions.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Assembly-CSharp.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.AI.Navigation.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Barracuda.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Burst.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.ML-Agents.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Mathematics.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.TextMeshPro.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/Unity.Timeline.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.TestRunner.dll"
+    },
+    {
+      "File": "Library/ScriptAssemblies/UnityEngine.UI.dll"
+    }
+  ],
+  "GlobSignatures": [
+    {
+      "Path": "/home/hugo/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Tools/BuildPipeline"
+    }
+  ],
+  "ContentDigestExtensions": [
+    ".rsp",
+    ".dll",
+    ".exe",
+    ".pdb"
+  ],
+  "StructuredLogFileName": "Library/Bee/tundra.log.json",
+  "StateFileName": "Library/Bee/TundraBuildState.state",
+  "StateFileNameTmp": "Library/Bee/TundraBuildState.state.tmp",
+  "StateFileNameMapped": "Library/Bee/TundraBuildState.state.map",
+  "ScanCacheFileName": "Library/Bee/tundra.scancache",
+  "ScanCacheFileNameTmp": "Library/Bee/tundra.scancache.tmp",
+  "DigestCacheFileName": "Library/Bee/tundra.digestcache",
+  "DigestCacheFileNameTmp": "Library/Bee/tundra.digestcache.tmp",
+  "CachedNodeOutputDirectoryName": "Library/Bee/CachedNodeOutput",
+  "EmitDataForBeeWhy": 0,
+        "NamedNodes": {
+          "all_tundra_nodes": 0,
+          "ScriptAssemblies": 1,
+          "ScriptAssembliesAndTypeDB": 3
+        }
+,  "DefaultNodes": [
+    0
+  ],
+  "SharedResources": [],
+  "Scanners": [],
+  "Identifier": "Library/Bee/2400b0aESkipCompile.dag.json",
+  "PayloadsFile": "/home/hugo/Repositories/Unity/AI-Parking-RC-Unity-v2/Library/Bee/2400b0aESkipCompile.dag.payloads",
+  "RelativePathToRoot": "../.."
+}

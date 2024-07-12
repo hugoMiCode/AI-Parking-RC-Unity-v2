@@ -20,10 +20,6 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 0.8
-      gail:
-        strength: 0.2
-        demo_path: Demos/90RCDemo.demo
-        use_actions: true
 
     keep_checkpoints: 15
     checkpoint_interval: 500000

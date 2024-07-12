@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/90RC.unity
     guid: 6c9da7d5ea9f294489db20310179c25e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ParallelRC.unity
-    guid: a450dd0a4323da9208046f2a26bc376e
+    guid: 9004f4193bf378276aa0586d730c46a3
   m_configObjects: {}

@@ -35,8 +35,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private float PreviousDistance = 0f;
 
-        private ActionSegment<float> LastAction;
-        private float[] CurrentRays;
+        float[] LidarM1;
+        float[] LidarM2;
 
 
         // GameObjects
@@ -82,8 +82,11 @@ namespace UnityStandardAssets.Vehicles.Car
             RayDistancesLeftPrevious = new float[(RayAmount - 2) / 2];
             RayDistancesRightPrevious = new float[(RayAmount - 2) / 2];
 
+            LidarM1 = new float[RayAmount];
+            LidarM2 = new float[RayAmount];
 
-            Reset();   
+
+            Reset();
         }
 
         public override void OnEpisodeBegin()
@@ -181,7 +184,14 @@ namespace UnityStandardAssets.Vehicles.Car
             float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
             float spawnZ = UnityEngine.Random.Range(spawnRangeZ.x, spawnRangeZ.y);
             Vector3 spawnPosition = new(spawnX, startPosition.y, spawnZ);
-            Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(-80f, 80f), 0);
+
+            float baseAngle = UnityEngine.Random.Range(-80f, 80f);
+            if (spawnX < -6)
+                baseAngle = 90f + UnityEngine.Random.Range(-30f, 30f);
+            else if (spawnX > 6)
+                baseAngle = -90f + UnityEngine.Random.Range(-30f, 30f);
+
+            Quaternion spawnRotation = Quaternion.Euler(0, baseAngle, 0); // UnityEngine.Random.Range(-80f, 80f)
 
             rb.transform.SetLocalPositionAndRotation(spawnPosition, spawnRotation);
         }
@@ -196,26 +206,36 @@ namespace UnityStandardAssets.Vehicles.Car
 
             (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
 
-            RayPerceptionInput RayPerceptionIn = RayPerceptionSensorComponent3D.GetRayPerceptionInput();
-            RayPerceptionOutput RayPerceptionOut = RayPerceptionSensor.Perceive(RayPerceptionIn);
-            RawRayOutputs = RayPerceptionOut.RayOutputs;
+            int totalRayCount = RayDistancesLeftCurrent.Length + RayDistancesRightCurrent.Length + 2;
+            float[] CurrentLidar = new float[totalRayCount];
 
+            int index = 0;
 
-            // Add the lidar data to the observation
-            sensor.AddObservation(RayDistanceFrontCurrent);
+            CurrentLidar[index++] = RayDistanceFrontCurrent;
             for (int i = 0; i < RayDistancesRightCurrent.Length; i++)
-                sensor.AddObservation(RayDistancesRightCurrent[i]);
-            sensor.AddObservation(RayDistanceBackCurrent);
+                CurrentLidar[index++] = RayDistancesRightCurrent[i];
+            CurrentLidar[index++] = RayDistanceBackCurrent;
             for (int i = 0; i < RayDistancesLeftCurrent.Length; i++)
-                sensor.AddObservation(RayDistancesLeftCurrent[i]);
+                CurrentLidar[index++] = RayDistancesLeftCurrent[i];
+
+
+
+            for (int i = 0; i < CurrentLidar.Length; i++) {
+                sensor.AddObservation(CurrentLidar[i]);
+                sensor.AddObservation(LidarM1[i]);
+                sensor.AddObservation(LidarM2[i]);
+            }
+
+            LidarM2 = LidarM1;
+            LidarM1 = CurrentLidar;
+
+            sensor.AddObservation(carControllerRC.CurrentSpeed / carControllerRC.MaxSpeed);
         }
 
         public override void OnActionReceived(ActionBuffers actions)
         {
             float steering = actions.ContinuousActions[0];
             float speed = actions.ContinuousActions[1];
-
-            LastAction = actions.ContinuousActions;
 
             // Debug.Log("steering: " + Mathf.Round(steering*100f)/100 + " speed: " + Mathf.Round(speed*100f)/100 + " steps: " + steps);
 
@@ -225,17 +245,6 @@ namespace UnityStandardAssets.Vehicles.Car
             float reward = CalculateReward();
 
             AddReward(reward);
-
-            // Si on appuie sur la touche espace, on affiche les données du lidar
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                
-                CurrentRays = new float[RawRayOutputs.Length - 1];
-                for (int i = 0; i < RawRayOutputs.Length - 1; i++)
-                    CurrentRays[i] = RawRayOutputs[i].HitFraction;
-
-                Debug.Log("Lidar(" + CurrentRays.Length + "):" + ArrayToString(CurrentRays)); 
-                Debug.Log("Last action: Steering: " + LastAction[0] + "Speed: " + LastAction[1]);
-            }
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)

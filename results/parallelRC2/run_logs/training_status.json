@@ -1,0 +1,155 @@
+{
+    "ParkParallelRC": {
+        "checkpoints": [
+            {
+                "steps": 499999,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-499999.onnx",
+                "reward": 219.14728418986002,
+                "creation_time": 1720693763.9389603,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-499999.pt"
+                ]
+            },
+            {
+                "steps": 999855,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-999855.onnx",
+                "reward": null,
+                "creation_time": 1720696136.836576,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-999855.pt"
+                ]
+            },
+            {
+                "steps": 1499833,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-1499833.onnx",
+                "reward": null,
+                "creation_time": 1720698563.708441,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-1499833.pt"
+                ]
+            },
+            {
+                "steps": 1999741,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-1999741.onnx",
+                "reward": null,
+                "creation_time": 1720700933.44631,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-1999741.pt"
+                ]
+            },
+            {
+                "steps": 2499904,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-2499904.onnx",
+                "reward": 2009.1744101388115,
+                "creation_time": 1720703275.9210951,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-2499904.pt"
+                ]
+            },
+            {
+                "steps": 2999822,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-2999822.onnx",
+                "reward": 1672.0339693341937,
+                "creation_time": 1720704692.3474348,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-2999822.pt"
+                ]
+            },
+            {
+                "steps": 3367120,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-3367120.onnx",
+                "reward": 1496.4125566482544,
+                "creation_time": 1720706250.1145904,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-3367120.pt"
+                ]
+            },
+            {
+                "steps": 3499854,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-3499854.onnx",
+                "reward": 1984.5641593933105,
+                "creation_time": 1720708363.5747313,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-3499854.pt"
+                ]
+            },
+            {
+                "steps": 3999896,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-3999896.onnx",
+                "reward": 1940.6905473981585,
+                "creation_time": 1720710862.4952326,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-3999896.pt"
+                ]
+            },
+            {
+                "steps": 4499755,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-4499755.onnx",
+                "reward": 2869.4674145380654,
+                "creation_time": 1720713365.6498551,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-4499755.pt"
+                ]
+            },
+            {
+                "steps": 4736652,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-4736652.onnx",
+                "reward": 1215.516999380929,
+                "creation_time": 1720714423.1261027,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-4736652.pt"
+                ]
+            },
+            {
+                "steps": 4999956,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-4999956.onnx",
+                "reward": 1063.8433416911535,
+                "creation_time": 1720715362.5727801,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-4999956.pt"
+                ]
+            },
+            {
+                "steps": 5499856,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-5499856.onnx",
+                "reward": 120.6463680267334,
+                "creation_time": 1720716858.7720366,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-5499856.pt"
+                ]
+            },
+            {
+                "steps": 5999851,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-5999851.onnx",
+                "reward": null,
+                "creation_time": 1720719361.7528129,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-5999851.pt"
+                ]
+            },
+            {
+                "steps": 6317347,
+                "file_path": "results/parallelRC2/ParkParallelRC/ParkParallelRC-6317347.onnx",
+                "reward": 407.12030296325685,
+                "creation_time": 1720720943.0102317,
+                "auxillary_file_paths": [
+                    "results/parallelRC2/ParkParallelRC/ParkParallelRC-6317347.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 6317347,
+            "file_path": "results/parallelRC2/ParkParallelRC.onnx",
+            "reward": 407.12030296325685,
+            "creation_time": 1720720943.0102317,
+            "auxillary_file_paths": [
+                "results/parallelRC2/ParkParallelRC/ParkParallelRC-6317347.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.3.0+cu121"
+    }
+}

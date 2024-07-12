@@ -151,7 +151,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 70
+  controlID: 179
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,8 +171,8 @@ MonoBehaviour:
     y: 0
     width: 455
     height: 879
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -412,9 +412,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa560000
-    m_LastClickedID: 22266
-    m_ExpandedIDs: 00000000c256000000ca9a3b
+    m_SelectedIDs: 465a0000
+    m_LastClickedID: 23110
+    m_ExpandedIDs: 000000000e5a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -442,7 +442,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2560000
+    m_ExpandedIDs: 000000000e5a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000a0f2000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -539,7 +539,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 568
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -582,9 +582,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b4ddffff
-      m_LastClickedID: 0
-      m_ExpandedIDs: fe65ffff2cfbffff
+      m_SelectedIDs: a2c0ffff
+      m_LastClickedID: -16222
+      m_ExpandedIDs: cec0ffff1afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -951,9 +951,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -242.71179, y: -0.83847386, z: -139.03317}
+    m_Target: {x: -239.56873, y: 3.5851278, z: -135.46748}
     speed: 2
-    m_Value: {x: -242.71179, y: -0.83847386, z: -139.03317}
+    m_Value: {x: -239.56873, y: 3.5851278, z: -135.46748}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1003,9 +1003,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.3451544, y: 0.62113005, z: -0.35185242, w: 0.60931575}
   m_Size:
-    m_Target: 10.02335
+    m_Target: 13.435596
     speed: 2
-    m_Value: 10.02335
+    m_Value: 13.435596
   m_Ortho:
     m_Target: 0
     speed: 2
