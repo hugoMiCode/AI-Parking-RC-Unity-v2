@@ -16,8 +16,8 @@ namespace UnityStandardAssets.Vehicles.Car
     public class CarAgent90RC : Agent
     {
         // Public variables
-        public Vector2 spawnRangeX = new Vector2(1, 2.3f);
-        public Vector2 spawnRangeZ = new Vector2(-9f, 2f);
+        public Vector2 spawnRangeX = new(1, 2.3f);
+        public Vector2 spawnRangeZ = new(-9f, 2f);
         public GameObject targetFinal;
 
         // Private variables
@@ -27,17 +27,17 @@ namespace UnityStandardAssets.Vehicles.Car
         private float[] LidarMinus2;
         private float PreviousDistance = 0f;
         private int Step = 0;
+        private Vector3 startPosition;
 
         // Components
         private RayPerceptionSensorComponent3D RayPerceptionSensorComponent3D;
         private Rigidbody rb;
         private CarControllerRC carControllerRC;
         private StatsRecorder statsRecorder;
-        private Vector3 startPosition;
 
         // Queues for benchmarking the agent
-        private readonly Queue<bool> successQueue = new Queue<bool>();
-        private readonly Queue<float> distanceToTargetLidarQueue = new Queue<float>();
+        private readonly Queue<bool> successQueue = new();
+        private readonly Queue<float> distanceToTargetLidarQueue = new();
         private const int queueSize = 100;
 
 
@@ -69,7 +69,6 @@ namespace UnityStandardAssets.Vehicles.Car
         public override void OnEpisodeBegin()
         {
             Step = 0;
-
             Reset();
         }
 

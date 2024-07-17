@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/90RC.unity
+- path: Assets/Scenes/ParallelRC.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

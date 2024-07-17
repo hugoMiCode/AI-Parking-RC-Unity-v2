@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using Debug = UnityEngine.Debug;
-
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
@@ -10,45 +8,45 @@ using Unity.Barracuda;
 using System;
 using UnityEditor;
 
+
 #pragma warning disable IDE0130 // Namespace does not match folder structure
 namespace UnityStandardAssets.Vehicles.Car
 #pragma warning restore IDE0130 // Namespace does not match folder structure
 {
     public class CarAgentParallelRC : Agent
     {
-        // a remplacer par une zone de spawn dans l'éditeur
+        // Public variables
         public Vector2 spawnRangeX = new(1, 2.3f);
         public Vector2 spawnRangeZ = new(-9f, 2f); // -17, -11
         private float slotMultiplier; // 1 is the car length, 2 is 2 car lengths, etc.
-
         public GameObject targetIntermediate;
         public GameObject targetFinal;
-        private GameObject currentTarget;
         public GameObject carBlackFront;
         public GameObject carBlackBack;
 
+        // Private variables
         private int RayAmount;
-        float[] LidarM1;
-        float[] LidarM2;
-
-
-
-        private RayPerceptionSensorComponent3D RayPerceptionSensorComponent3D;
-        private CarControllerRC carControllerRC;
-        EnvironmentParameters defaultParameters;
-        private Rigidbody rb;
-        private bool inIntermediateTarget = false;
-        private bool inFinishTarget = false;
-
+        private float[] LidarMinus1;
+        private float[] LidarMinus2;
         private Vector3 startPosition;
         private Vector3 lastPosition;
         private float lastAngle;
         private const float carLength = 0.042f * 100f;
+        private bool inIntermediateTarget = false;
+        private bool inFinishTarget = false;
 
+        // Components
+        private RayPerceptionSensorComponent3D RayPerceptionSensorComponent3D;
+        private Rigidbody rb;
+        private CarControllerRC carControllerRC;
+        private GameObject currentTarget;
+        private EnvironmentParameters defaultParameters;
+        private StatsRecorder statsRecorder;
+
+        // Queues for benchmarking the agent
         private readonly Queue<bool> successQueue = new();
         private readonly Queue<float> multiplierQueue = new();
         private const int queueSize = 100;
-        private StatsRecorder statsRecorder;
 
 
         public override void Initialize()
@@ -57,12 +55,9 @@ namespace UnityStandardAssets.Vehicles.Car
             RayPerceptionSensorComponent3D = Sensor.GetComponent<RayPerceptionSensorComponent3D>();
             carControllerRC = GetComponent<CarControllerRC>();
             rb = GetComponent<Rigidbody>();
-            
             defaultParameters = Academy.Instance.EnvironmentParameters;
-
             startPosition = transform.localPosition;
             lastPosition = startPosition;
-
             statsRecorder = Academy.Instance.StatsRecorder;
 
             // Initialize the RayDistances arrays
@@ -70,11 +65,10 @@ namespace UnityStandardAssets.Vehicles.Car
             RayPerceptionOutput RayPerceptionOut = RayPerceptionSensor.Perceive(RayPerceptionIn);
             RayPerceptionOutput.RayOutput[] RayOutputs = RayPerceptionOut.RayOutputs;
     
-            // Length -1 because 2 Rays overlap in the end of the array.
+            // 'Length -1' because 2 Rays overlap in the end of the array.
             RayAmount = RayOutputs.Length - 1;
-
-            LidarM1 = new float[RayAmount];
-            LidarM2 = new float[RayAmount];
+            LidarMinus1 = new float[RayAmount];
+            LidarMinus2 = new float[RayAmount];
 
             Reset();
         }
@@ -84,60 +78,86 @@ namespace UnityStandardAssets.Vehicles.Car
             Reset();
         }
 
-        private void EndEpisodeWithSuccess(bool wasSuccessful, float multiplier = 0f)
+        private void Reset()
         {
-            if (successQueue.Count >= queueSize) {
-                successQueue.Dequeue();
-                multiplierQueue.Dequeue();
-            }
+            // Randomize car's spawn position, rotation and slot space
+            float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
+            float spawnZ = UnityEngine.Random.Range(spawnRangeZ.x, spawnRangeZ.y);
+            slotMultiplier = UnityEngine.Random.Range(1.8f, 2f); // 1 is the car length, 2 is 2 car lengths, etc.
+            Vector3 spawnPosition = new(spawnX, startPosition.y, spawnZ);
+            Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(-5f, 5f), 0);
 
-            successQueue.Enqueue(wasSuccessful);
-            multiplierQueue.Enqueue(multiplier);
+            // Adjust the slot space
+            float currentSlotSpace = carBlackFront.transform.localPosition.z - carBlackBack.transform.localPosition.z - carLength;
+            float newSlotSpace = slotMultiplier * carLength;
+            float slotSpaceDiff = newSlotSpace - currentSlotSpace;
+            carBlackFront.transform.localPosition = new Vector3(carBlackFront.transform.localPosition.x, carBlackFront.transform.localPosition.y, carBlackFront.transform.localPosition.z + slotSpaceDiff / 2);
+            carBlackBack.transform.localPosition = new Vector3(carBlackBack.transform.localPosition.x, carBlackBack.transform.localPosition.y, carBlackBack.transform.localPosition.z - slotSpaceDiff / 2);
+            targetIntermediate.transform.localPosition = new Vector3(targetIntermediate.transform.localPosition.x, targetIntermediate.transform.localPosition.y, carBlackFront.transform.localPosition.z - 0.8f);
 
-            float successRate = CalculateSuccessRate();
-            float averageMultiplier = CalculateAverageMultiplier();
+            // Set the car's position and rotation
+            rb.transform.SetLocalPositionAndRotation(spawnPosition, spawnRotation);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
 
+            // Reset variables
+            inIntermediateTarget = false;
+            inFinishTarget = false;
 
-            statsRecorder.Add("ParkingSuccessRate", successRate);
-            statsRecorder.Add("ParkingMultiplier", averageMultiplier);
-
-            // Debug.Log("Reward: " + GetCumulativeReward());
-
-            EndEpisode();
+            currentTarget = targetIntermediate;
+            targetIntermediate.SetActive(true);
+            targetFinal.SetActive(false);
         }
 
-        private float CalculateSuccessRate()
+        public override void CollectObservations(VectorSensor sensor)
         {
-            int successCount = 0;
-            foreach (bool success in successQueue) {
-                if (success)
-                    successCount++;
+            // Collect observations from the environment
+            float[] CurrentLidar = ReadCurrentLidar();
+
+            // Add the observations to the sensor
+            for (int i = 0; i < CurrentLidar.Length; i++) {
+                sensor.AddObservation(CurrentLidar[i]);
+                sensor.AddObservation(LidarMinus1[i]);
+                sensor.AddObservation(LidarMinus2[i]);
             }
 
-            return (float)successCount / successQueue.Count * 100;
+            sensor.AddObservation(carControllerRC.CurrentSpeed / carControllerRC.MaxSpeed);
+            
+            LidarMinus2 = LidarMinus1;
+            LidarMinus1 = CurrentLidar;
         }
 
-        private float CalculateAverageMultiplier()
+        public override void OnActionReceived(ActionBuffers actions)
         {
-            float totalMultiplier = 0f;
-            foreach (float multiplier in multiplierQueue)
-            {
-                totalMultiplier += multiplier;
-            }
+            float steering = actions.ContinuousActions[0];
+            float speed = actions.ContinuousActions[1];
 
-            return totalMultiplier / multiplierQueue.Count;
+            carControllerRC.SetSpeed(speed);
+            carControllerRC.SetSteering(steering);
+
+            float reward = CalculateReward();
+            AddReward(reward);
+        }
+
+        public override void Heuristic(in ActionBuffers actionsOut)
+        {
+            ActionSegment<float> continuousActionsOut = actionsOut.ContinuousActions;
+
+            float steering = Input.GetAxis("Horizontal");
+            float speed = Input.GetAxis("Vertical");
+
+            continuousActionsOut[0] = steering;
+            continuousActionsOut[1] = speed;
         }
 
         void FixedUpdate()
         {
-            // Get desicion from python by requesting the next action
             RequestDecision();
         }
 
         private float CalculateReward()
         {
             float reward = 0f;
-
 
             // Negative reward for each step of 100 / MaxStep
             reward -= 100f / MaxStep;
@@ -253,100 +273,47 @@ namespace UnityStandardAssets.Vehicles.Car
             return reward;
         }
 
-        private void Reset()
+        private void EndEpisodeWithSuccess(bool wasSuccessful, float multiplier = 0f)
         {
-            float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
-            float spawnZ = UnityEngine.Random.Range(spawnRangeZ.x, spawnRangeZ.y);
-            slotMultiplier = UnityEngine.Random.Range(1.8f, 2f); // 1 is the car length, 2 is 2 car lengths, etc.
-
-            Vector3 spawnPosition = new(spawnX, startPosition.y, spawnZ);
-            Quaternion spawnRotation = Quaternion.Euler(0, UnityEngine.Random.Range(-5f, 5f), 0);
-
-            float currentSlotSpace = carBlackFront.transform.localPosition.z - carBlackBack.transform.localPosition.z - carLength;
-            float newSlotSpace = slotMultiplier * carLength;
-            float slotSpaceDiff = newSlotSpace - currentSlotSpace;
-            
-            carBlackFront.transform.localPosition = new Vector3(carBlackFront.transform.localPosition.x, carBlackFront.transform.localPosition.y, carBlackFront.transform.localPosition.z + slotSpaceDiff / 2);
-            carBlackBack.transform.localPosition = new Vector3(carBlackBack.transform.localPosition.x, carBlackBack.transform.localPosition.y, carBlackBack.transform.localPosition.z - slotSpaceDiff / 2);
-
-            targetIntermediate.transform.localPosition = new Vector3(targetIntermediate.transform.localPosition.x, targetIntermediate.transform.localPosition.y, carBlackFront.transform.localPosition.z - 0.8f);
-
-            rb.transform.SetLocalPositionAndRotation(spawnPosition, spawnRotation);
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-
-            inIntermediateTarget = false;
-            inFinishTarget = false;
-
-            currentTarget = targetIntermediate;
-            targetIntermediate.SetActive(true);
-            targetFinal.SetActive(false);
-        }
-
-
-        public override void CollectObservations(VectorSensor sensor)
-        {
-            float[] RayDistancesLeftCurrent;
-            float[] RayDistancesRightCurrent;
-            float RayDistanceFrontCurrent;
-            float RayDistanceBackCurrent;
-
-            (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
-
-            int totalRayCount = RayDistancesLeftCurrent.Length + RayDistancesRightCurrent.Length + 2;
-            float[] CurrentLidar = new float[totalRayCount];
-
-            int index = 0;
-
-            CurrentLidar[index++] = RayDistanceFrontCurrent;
-            for (int i = 0; i < RayDistancesRightCurrent.Length; i++)
-                CurrentLidar[index++] = RayDistancesRightCurrent[i];
-            CurrentLidar[index++] = RayDistanceBackCurrent;
-            for (int i = 0; i < RayDistancesLeftCurrent.Length; i++)
-                CurrentLidar[index++] = RayDistancesLeftCurrent[i];
-
-
-
-
-            for (int i = 0; i < CurrentLidar.Length; i++) {
-                sensor.AddObservation(CurrentLidar[i]);
-                sensor.AddObservation(LidarM1[i]);
-                sensor.AddObservation(LidarM2[i]);
+            if (successQueue.Count >= queueSize) {
+                successQueue.Dequeue();
+                multiplierQueue.Dequeue();
             }
 
-            LidarM2 = LidarM1;
-            LidarM1 = CurrentLidar;
+            successQueue.Enqueue(wasSuccessful);
+            multiplierQueue.Enqueue(multiplier);
 
-            sensor.AddObservation(carControllerRC.CurrentSpeed / carControllerRC.MaxSpeed);
+            float successRate = CalculateSuccessRate();
+            float averageMultiplier = CalculateAverageMultiplier();
+
+            statsRecorder.Add("ParkingSuccessRate", successRate);
+            statsRecorder.Add("ParkingMultiplier", averageMultiplier);
+
+            EndEpisode();
         }
 
-        public override void OnActionReceived(ActionBuffers actions)
+        private float CalculateSuccessRate()
         {
-            float steering = actions.ContinuousActions[0];
-            float speed = actions.ContinuousActions[1];
+            int successCount = 0;
+            foreach (bool success in successQueue) {
+                if (success)
+                    successCount++;
+            }
 
-            // Debug.Log("steering: " + Mathf.Round(steering*100f)/100 + " speed: " + Mathf.Round(speed*100f)/100 + " steps: " + steps);
-
-            carControllerRC.SetSpeed(speed);
-            carControllerRC.SetSteering(steering);
-
-            float reward = CalculateReward();
-
-            AddReward(reward);
+            return (float)successCount / successQueue.Count * 100;
         }
 
-        public override void Heuristic(in ActionBuffers actionsOut)
+        private float CalculateAverageMultiplier()
         {
-            ActionSegment<float> continuousActionsOut = actionsOut.ContinuousActions;
+            float totalMultiplier = 0f;
+            foreach (float multiplier in multiplierQueue) {
+                totalMultiplier += multiplier;
+            }
 
-            float steering = Input.GetAxis("Horizontal");
-            float speed = Input.GetAxis("Vertical");
-
-            continuousActionsOut[0] = steering;
-            continuousActionsOut[1] = speed;
+            return totalMultiplier / multiplierQueue.Count;
         }
-        
-        private (float[] RDistL, float[] RDistR, float RDistF, float RDistB) ReadRayCast()
+
+        private float[] ReadCurrentLidar()
         {
             RayPerceptionInput RayPerceptionIn = RayPerceptionSensorComponent3D.GetRayPerceptionInput();
             RayPerceptionOutput RayPerceptionOut = RayPerceptionSensor.Perceive(RayPerceptionIn);
@@ -366,12 +333,18 @@ namespace UnityStandardAssets.Vehicles.Car
                 else
                     RayDistancesRight[(i - 1) / 2] = RayOutputs[i].HitFraction;
 
+            float[] Lidar = new float[RayAmount];
+            int index = 0;
 
+            Lidar[index++] = RayDistanceFront;
+            for (int i = 0; i < RayDistancesRight.Length; i++)
+                Lidar[index++] = RayDistancesRight[i];
 
-            // Debug.Log("Left rays:\n" + ArrayToString(RayDistancesLeft));
-            // Debug.Log("Right rays:\n" + ArrayToString(RayDistancesRight));
+            Lidar[index++] = RayDistanceBack;
+            for (int i = 0; i < RayDistancesLeft.Length; i++)
+                Lidar[index++] = RayDistancesLeft[i];
 
-            return (RayDistancesLeft, RayDistancesRight, RayDistanceFront, RayDistanceBack);
+            return Lidar;
         }
 
         void OnTriggerEnter(Collider other)
