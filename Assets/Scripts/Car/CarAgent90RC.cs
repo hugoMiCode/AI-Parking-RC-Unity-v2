@@ -22,18 +22,11 @@ namespace UnityStandardAssets.Vehicles.Car
 
         // Private variables
         private int RayAmount;
-        private float[] RayDistancesLeftTarget;
-        private float[] RayDistancesRightTarget;
-        private float RayDistanceFrontTarget;
-        private float RayDistanceBackTarget;
-        private float[] RayDistancesLeftPrevious;
-        private float[] RayDistancesRightPrevious;
-        private float RayDistanceFrontPrevious;
-        private float RayDistanceBackPrevious;
-        private RayPerceptionOutput.RayOutput[] RawRayOutputs;
+        private float[] TargetLidar;
+        private float[] LidarMinus1;
+        private float[] LidarMinus2;
         private float PreviousDistance = 0f;
-        private float[] LidarM1;
-        private float[] LidarM2;
+        private int Step = 0;
 
         // Components
         private RayPerceptionSensorComponent3D RayPerceptionSensorComponent3D;
@@ -66,19 +59,17 @@ namespace UnityStandardAssets.Vehicles.Car
     
             // 'Length -1' because 2 Rays overlap in the end of the array.
             RayAmount = RayOutputs.Length - 1;
-            RayDistancesLeftTarget = new float[(RayAmount - 2) / 2];
-            RayDistancesRightTarget = new float[(RayAmount - 2) / 2];
-            RayDistancesLeftPrevious = new float[(RayAmount - 2) / 2];
-            RayDistancesRightPrevious = new float[(RayAmount - 2) / 2];
-
-            LidarM1 = new float[RayAmount];
-            LidarM2 = new float[RayAmount];
+            TargetLidar = new float[RayAmount];
+            LidarMinus1 = new float[RayAmount];
+            LidarMinus2 = new float[RayAmount];
 
             Reset();
         }
 
         public override void OnEpisodeBegin()
         {
+            Step = 0;
+
             Reset();
         }
 
@@ -91,7 +82,7 @@ namespace UnityStandardAssets.Vehicles.Car
             // Put the car in the slot space and read the lidar
             Vector3 ReadLidarPosition = new(targetFinal.transform.localPosition.x, startPosition.y, targetFinal.transform.localPosition.z);
             rb.transform.SetLocalPositionAndRotation(ReadLidarPosition, Quaternion.Euler(0, 0, 0));
-            (RayDistancesLeftTarget, RayDistancesRightTarget, RayDistanceFrontTarget, RayDistanceBackTarget) = ReadRayCast();
+            TargetLidar = ReadCurrentLidar();
         
             // Randomize car's spawn position and rotation
             float spawnX = UnityEngine.Random.Range(spawnRangeX.x, spawnRangeX.y);
@@ -112,38 +103,20 @@ namespace UnityStandardAssets.Vehicles.Car
         public override void CollectObservations(VectorSensor sensor)
         {
             // Collect observations from the environment
-            float[] RayDistancesLeftCurrent;
-            float[] RayDistancesRightCurrent;
-            float RayDistanceFrontCurrent;
-            float RayDistanceBackCurrent;
-            (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
-
-            // Create the lidar array
-            int totalRayCount = RayDistancesLeftCurrent.Length + RayDistancesRightCurrent.Length + 2;
-            float[] CurrentLidar = new float[totalRayCount];
-            int index = 0;
-
-            CurrentLidar[index++] = RayDistanceFrontCurrent;
-            for (int i = 0; i < RayDistancesRightCurrent.Length; i++)
-                CurrentLidar[index++] = RayDistancesRightCurrent[i];
-
-            CurrentLidar[index++] = RayDistanceBackCurrent;
-            for (int i = 0; i < RayDistancesLeftCurrent.Length; i++)
-                CurrentLidar[index++] = RayDistancesLeftCurrent[i];
-
+            float[] CurrentLidar = ReadCurrentLidar();
 
             // Add the observations to the sensor
             for (int i = 0; i < CurrentLidar.Length; i++) {
                 sensor.AddObservation(CurrentLidar[i]);
-                sensor.AddObservation(LidarM1[i]);
-                sensor.AddObservation(LidarM2[i]);
+                sensor.AddObservation(LidarMinus1[i]);
+                sensor.AddObservation(LidarMinus2[i]);
             }
 
             sensor.AddObservation(carControllerRC.CurrentSpeed / carControllerRC.MaxSpeed);
 
 
-            LidarM2 = LidarM1;
-            LidarM1 = CurrentLidar;
+            LidarMinus2 = LidarMinus1;
+            LidarMinus1 = CurrentLidar;
         }
 
         public override void OnActionReceived(ActionBuffers actions)
@@ -171,6 +144,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         void FixedUpdate()
         {
+            Step++;
             RequestDecision();
         }
 
@@ -179,20 +153,21 @@ namespace UnityStandardAssets.Vehicles.Car
             float reward = 0f;
 
             // Negative reward for each step
-            reward -= 1000f / MaxStep;
+            // reward -= 1000f / MaxStep;
 
             float distance = CalculateDistanceDotProduct();
 
-            if (distance < 5f && Mathf.Abs(carControllerRC.CurrentSpeed) < 0.15) {
+            if (distance < 5f && Mathf.Abs(carControllerRC.CurrentSpeed) < 0.15 && Step > 10) {
                 reward += 10000f;
                 Debug.Log("Success");
                 EndEpisodeWithSuccess(true, distance);
             }
 
-            reward += (PreviousDistance - distance) * 100;
+            if (PreviousDistance != 0f)
+                reward += (PreviousDistance - distance) * 10;
             PreviousDistance = distance;
 
-            // if (Mathf.Abs(reward) > 3f)
+            // if (Mathf.Abs(reward) > 0.3f)
             //     Debug.Log("Reward: " + reward + " Distance: " + distance);
 
             return reward;
@@ -239,7 +214,7 @@ namespace UnityStandardAssets.Vehicles.Car
             return totalMultiplier / distanceToTargetLidarQueue.Count;
         }
 
-        private (float[] RDistL, float[] RDistR, float RDistF, float RDistB) ReadRayCast()
+        private float[] ReadCurrentLidar()
         {
             RayPerceptionInput RayPerceptionIn = RayPerceptionSensorComponent3D.GetRayPerceptionInput();
             RayPerceptionOutput RayPerceptionOut = RayPerceptionSensor.Perceive(RayPerceptionIn);
@@ -259,49 +234,30 @@ namespace UnityStandardAssets.Vehicles.Car
                 else
                     RayDistancesRight[(i - 1) / 2] = RayOutputs[i].HitFraction;
 
-            return (RayDistancesLeft, RayDistancesRight, RayDistanceFront, RayDistanceBack);
+            float[] Lidar = new float[RayAmount];
+            int index = 0;
+
+            Lidar[index++] = RayDistanceFront;
+            for (int i = 0; i < RayDistancesRight.Length; i++)
+                Lidar[index++] = RayDistancesRight[i];
+
+            Lidar[index++] = RayDistanceBack;
+            for (int i = 0; i < RayDistancesLeft.Length; i++)
+                Lidar[index++] = RayDistancesLeft[i];
+
+            return Lidar;
         }
 
         float CalculateDistanceDotProduct()
         {
-            float[] RayDistancesLeftCurrent;
-            float[] RayDistancesRightCurrent;
-            float RayDistanceFrontCurrent;
-            float RayDistanceBackCurrent;
-            (RayDistancesLeftCurrent, RayDistancesRightCurrent, RayDistanceFrontCurrent, RayDistanceBackCurrent) = ReadRayCast();
+            float[] CurrentLidar = ReadCurrentLidar();
             
-            // calculate the dot product between the (target - previous) and (target - current) lidar
-            float distFrontCurrent = RayDistanceFrontTarget - RayDistanceFrontCurrent;
-            float distBackCurrent = RayDistanceBackTarget - RayDistanceBackCurrent;
-            float[] distLeftCurrent = new float[RayDistancesLeftTarget.Length];
-            float[] distRightCurrent = new float[RayDistancesRightTarget.Length];
-            for (int i = 0; i < RayDistancesLeftTarget.Length; i++) {
-                distLeftCurrent[i] = RayDistancesLeftTarget[i] - RayDistancesLeftCurrent[i];
-                distRightCurrent[i] = RayDistancesRightTarget[i] - RayDistancesRightCurrent[i];
-            }
+            // Calculate the distance between the target and the current lidar (Taget - Current)
+            float[] DistLidarCurrent = new float[CurrentLidar.Length];
+            for (int i = 0; i < CurrentLidar.Length; i++)
+                DistLidarCurrent[i] = TargetLidar[i] - CurrentLidar[i];
 
-            float distFrontPrevious = RayDistanceFrontTarget - RayDistanceFrontPrevious;
-            float distBackPrevious = RayDistanceBackTarget - RayDistanceBackPrevious;
-            float[] distLeftPrevious = new float[RayDistancesLeftTarget.Length];
-            float[] distRightPrevious = new float[RayDistancesRightTarget.Length];
-            for (int i = 0; i < RayDistancesLeftTarget.Length; i++) {
-                distLeftPrevious[i] = RayDistancesLeftTarget[i] - RayDistancesLeftPrevious[i];
-                distRightPrevious[i] = RayDistancesRightTarget[i] - RayDistancesRightPrevious[i];
-            }
-
-            float dotProductLeft = DotProduct(distLeftCurrent, distLeftPrevious);
-            float dotProductRight = DotProduct(distRightCurrent, distRightPrevious);
-            float dotProductFront = distFrontCurrent * distFrontPrevious;
-            float dotProductBack = distBackCurrent * distBackPrevious;
-
-            float distance = dotProductLeft + dotProductRight + dotProductFront + dotProductBack;
-
-            RayDistancesLeftPrevious = RayDistancesLeftCurrent;
-            RayDistancesRightPrevious = RayDistancesRightCurrent;
-            RayDistanceFrontPrevious = RayDistanceFrontCurrent;
-            RayDistanceBackPrevious = RayDistanceBackCurrent;
-
-            return distance;
+            return DotProduct(DistLidarCurrent, DistLidarCurrent);;
         }
 
         float DotProduct(float[] a, float[] b)
