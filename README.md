@@ -102,6 +102,31 @@ reward_signals:
 
 To use GAIL, ensure the demonstration file exists at the specified path and contains the necessary data for the agent to learn from.
 
+### Monitoring Training with TensorBoard
+
+To monitor the training process and visualize the results, you can use TensorBoard. TensorBoard provides a suite of visualization tools to understand the training dynamics of your model.
+
+#### Running TensorBoard
+
+To launch TensorBoard, navigate to the project directory and run the following command:
+
+```bash
+tensorboard --logdir=results
+```
+
+This command specifies the `results` directory as the location where TensorBoard will look for the training logs.
+
+#### Notes
+
+- TensorBoard will serve the visualizations on `localhost` at port `6006` by default. You can access it by opening a web browser and navigating to:
+
+  ```
+  http://localhost:6006/
+  ```
+
+
+To stop TensorBoard, press `CTRL+C` in the terminal where it is running.
+
 ## Conclusion
 
 This README provides an overview of running the AI-Parking-RC-Unity project. Following instructions and understanding the configuration, you can go ahead and train and optimize AI models for parking tasks in Unity. For more detailed information, please refer to the [official ML-Agents documentation](https://github.com/Unity-Technologies/ml-agents/tree/main/docs).
