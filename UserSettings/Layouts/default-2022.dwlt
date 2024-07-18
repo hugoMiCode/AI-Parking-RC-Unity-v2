@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 929
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 10}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 368
     height: 523
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -171,8 +171,8 @@ MonoBehaviour:
     y: 0
     width: 455
     height: 879
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -412,9 +412,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 445a0000
-    m_LastClickedID: 23108
-    m_ExpandedIDs: 000000000c5a000000ca9a3b
+    m_SelectedIDs: b4550000
+    m_LastClickedID: 21940
+    m_ExpandedIDs: 000000007a55000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -442,7 +442,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c5a0000
+    m_ExpandedIDs: 000000007a550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -539,7 +539,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 329.27344
+  m_LastVerticalScrollValue: 568
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -582,9 +582,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e489ffff
-      m_LastClickedID: -30236
-      m_ExpandedIDs: f689fffff889ffff42d4ffff20fbffff
+      m_SelectedIDs: 6881feff
+      m_LastClickedID: -97944
+      m_ExpandedIDs: 9481feff9681feffd898feffbaa3feff02fbfeff2efbfeff30fbfeff881dffff8e6bffffa2d9ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -951,9 +951,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -239.56873, y: 3.5851278, z: -135.46748}
+    m_Target: {x: -244.63528, y: 0.55845773, z: -136.32635}
     speed: 2
-    m_Value: {x: -239.56873, y: 3.5851278, z: -135.46748}
+    m_Value: {x: -244.63528, y: 0.55845773, z: -136.32635}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1003,9 +1003,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.3451544, y: 0.62113005, z: -0.35185242, w: 0.60931575}
   m_Size:
-    m_Target: 13.435596
+    m_Target: 10.370655
     speed: 2
-    m_Value: 13.435596
+    m_Value: 10.370655
   m_Ortho:
     m_Target: 0
     speed: 2
