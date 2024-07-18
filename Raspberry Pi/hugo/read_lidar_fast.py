@@ -60,11 +60,10 @@ def plot_and_save_map(data_points):
     
     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
     
-    # Tracer des lignes droites du centre vers chaque point
+    # Trace lines from the origin to the data
     for angle, distance in zip(anglesGraph, distances):
         ax.plot([angle, angle], [0, distance], color='blue')
     
-    # Tracer des points pour chaque distance mesurée
     ax.scatter(anglesGraph, distances, c=distances, cmap='viridis', marker='o', s=10)
     
     ax.grid(True)
