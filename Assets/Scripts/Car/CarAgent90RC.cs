@@ -241,7 +241,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 Lidar[index++] = RayDistancesRight[i];
 
             Lidar[index++] = RayDistanceBack;
-            for (int i = 0; i < RayDistancesLeft.Length; i++)
+            for (int i = RayDistancesLeft.Length - 1; i >= 0; i--)
                 Lidar[index++] = RayDistancesLeft[i];
 
             return Lidar;
@@ -256,7 +256,7 @@ namespace UnityStandardAssets.Vehicles.Car
             for (int i = 0; i < CurrentLidar.Length; i++)
                 DistLidarCurrent[i] = TargetLidar[i] - CurrentLidar[i];
 
-            return DotProduct(DistLidarCurrent, DistLidarCurrent);;
+            return DotProduct(DistLidarCurrent, DistLidarCurrent);
         }
 
         float DotProduct(float[] a, float[] b)

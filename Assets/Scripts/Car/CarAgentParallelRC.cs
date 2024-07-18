@@ -341,7 +341,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 Lidar[index++] = RayDistancesRight[i];
 
             Lidar[index++] = RayDistanceBack;
-            for (int i = 0; i < RayDistancesLeft.Length; i++)
+            for (int i = 0; i < RayDistancesLeft.Length; i++) // needs to be fixed
                 Lidar[index++] = RayDistancesLeft[i];
 
             return Lidar;
