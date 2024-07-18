@@ -104,8 +104,4 @@ To use GAIL, ensure the demonstration file exists at the specified path and cont
 
 ## Conclusion
 
-This README provides an overview of setting up and running the AI-Parking-RC-Unity project. By following the instructions and understanding the configuration, you can train and optimize AI models for parking tasks in Unity. For more detailed information, refer to the [official ML-Agents documentation](https://github.com/Unity-Technologies/ml-agents/tree/main/docs).
-
----
-
-Feel free to customize the README further based on specific needs or additional details relevant to your project.
+This README provides an overview of running the AI-Parking-RC-Unity project. Following instructions and understanding the configuration, you can go ahead and train and optimize AI models for parking tasks in Unity. For more detailed information, please refer to the [official ML-Agents documentation](https://github.com/Unity-Technologies/ml-agents/tree/main/docs).
